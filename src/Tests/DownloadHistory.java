@@ -68,7 +68,6 @@ class DownloadHistory {
         csvReader.readLine();  //for ignore first row
         ArrayList<String> data =new ArrayList<>();
         while ((row = csvReader.readLine()) != null) {
-//            String[] data = row.split(",");
         data.add(row);
         }
         csvReader.close();
@@ -81,6 +80,9 @@ class DownloadHistory {
 
         csvWriter.flush();
         csvWriter.close();
+
+        File outFile = new File(DEST_PATH+"/"+FILE_NAME);
+        assertEquals(outFile.isFile(),true);
 
 
      //   String home = System.getProperty("user.home");
