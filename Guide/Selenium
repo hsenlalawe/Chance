@@ -1,0 +1,12 @@
+guide for use selenium in chrome
+guide link: https://chromedriver.chromium.org/getting-started
+1) download selenium library: sometimes it is include in the jdk and just need to verify the jars existence
+2) add jars to the project
+3) download chrome driver: https://chromedriver.chromium.org/downloads
+4) locate the driver and add the path in the test, example:  "System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");"
+
+* imports:
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
