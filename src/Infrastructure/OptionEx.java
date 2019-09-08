@@ -5,10 +5,6 @@ import java.util.Date;
 public class OptionEx extends Option{
 
     //Attributes
-    private char Clover;
-    private char Diamond;
-    private char Heart;
-    private char Spade;
     private Date date;
     private int id;
 
@@ -23,7 +19,6 @@ public class OptionEx extends Option{
         super(clover,diamond,heart,spade);
         this.id = id;
     }
-
 
 //    @Override
 //    public String toString() {

@@ -12,7 +12,7 @@ class GenerateAllOptions {
 
     @BeforeEach
     void setUp() {
-
+                    //7,8,9,10,J,Q,K,A
     for(int iClover=0;iClover<8;iClover++)
     {
         for(int iDiamond=0;iDiamond<8;iDiamond++)
@@ -21,7 +21,7 @@ class GenerateAllOptions {
             {
                 for(int iSpade=0;iSpade<8;iSpade++)
                 {
-
+                   // data.add()
 
                 }
 
