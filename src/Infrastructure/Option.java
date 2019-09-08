@@ -1,7 +1,5 @@
 package Infrastructure;
 
-import java.util.Date;
-
 public class Option {
 
     //Attributes
@@ -9,29 +7,13 @@ public class Option {
     private char Diamond;
     private char Heart;
     private char Spade;
-    private Date date;
-    private int id;
 
-    //Constructors
-    public Option(char clover, char diamond, char heart, char spade, Date date, int id) {
-        super();
+    public Option(char clover, char diamond, char heart, char spade) {
         Clover = clover;
         Diamond = diamond;
         Heart = heart;
         Spade = spade;
-        this.date = date;
-        this.id = id;
     }
-
-    public Option(char clover, char diamond, char heart, char spade, int id) {
-        super();
-        Clover = clover;
-        Diamond = diamond;
-        Heart = heart;
-        Spade = spade;
-        this.id = id;
-    }
-
     //ToString methods
     public String toStringCSV() {
         return  Clover + "," + Diamond + "," + Heart + "," + Spade + "\n";
@@ -73,24 +55,4 @@ public class Option {
     public void setSpade(char spade) {
         Spade = spade;
     }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }
-
-
-
-//asmhdgjhasg
