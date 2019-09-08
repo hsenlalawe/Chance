@@ -1,0 +1,4 @@
+environment: intelij
+repository: github
+testing: junit
+selenium
