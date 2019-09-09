@@ -3,56 +3,57 @@ package Infrastructure;
 public class Option {
 
     //Attributes
-    private char Clover;
-    private char Diamond;
-    private char Heart;
-    private char Spade;
+    private char clover;
+    private char diamond;
+    private char heart;
+    private char spade;
 
     public Option(char clover, char diamond, char heart, char spade) {
-        Clover = clover;
-        Diamond = diamond;
-        Heart = heart;
-        Spade = spade;
+        this.clover = clover;
+        this.diamond = diamond;
+        this.heart = heart;
+        this.spade = spade;
     }
     //ToString methods
     public String toStringCSV() {
-        return  Clover + "," + Diamond + "," + Heart + "," + Spade + "\n";
+        return  clover + "," + diamond + "," + heart + "," + spade + "\n";
     }
+
     @Override
     public String toString() {
-        return "Chance [Clover= " + Clover + ", Diamond= " + Diamond + ", Heart= " + Heart + ", Spade= " + Spade + "]";
+        return "Chance [Clover= " + clover + ", Diamond= " + diamond + ", Heart= " + heart + ", Spade= " + spade + "]";
     }
 
     //Getters & Setters
     public char getClover() {
-        return Clover;
+        return clover;
     }
 
     public void setClover(char clover) {
-        Clover = clover;
+        this.clover = clover;
     }
 
     public char getDiamond() {
-        return Diamond;
+        return diamond;
     }
 
     public void setDiamond(char diamond) {
-        Diamond = diamond;
+        this.diamond = diamond;
     }
 
     public char getHeart() {
-        return Heart;
+        return heart;
     }
 
     public void setHeart(char heart) {
-        Heart = heart;
+        this.heart = heart;
     }
 
     public char getSpade() {
-        return Spade;
+        return spade;
     }
 
     public void setSpade(char spade) {
-        Spade = spade;
+        this.spade = spade;
     }
 }
