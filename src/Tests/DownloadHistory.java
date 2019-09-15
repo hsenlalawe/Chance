@@ -19,7 +19,7 @@ class DownloadHistory {
     //TODO: https://code-examples.net/en/q/15a9700
 
     private final String CHROME_DRIVER="webdriver.chrome.driver";
-    private final String FILE_NAME ="Chance";
+    private final String FILE_NAME ="history";
     private final String DEST_PATH="/Users/hsenlalawe/Chance/Results/History";
 
 

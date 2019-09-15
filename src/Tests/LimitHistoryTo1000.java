@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LimitHistoryTo1000 {
 
     private ArrayList<String> data =new ArrayList<>();
-    private final String FILE_NAME ="Chance";
+    private final String FILE_NAME ="history";
     private final String DEST_PATH="/Users/hsenlalawe/Chance/Results/History";
 
     @BeforeEach

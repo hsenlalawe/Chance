@@ -16,7 +16,7 @@ class GenerateAllOptions {
     private ArrayList<Option> data = new ArrayList<>();
     private ArrayList<OptionInteger> dataInt = new ArrayList<>();
     private final String DEST_PATH="/Users/hsenlalawe/Chance/Results/Revive";
-    private final String FILE_NAME ="Rest";
+    private final String FILE_NAME ="rest";
 
 
     @BeforeEach
@@ -41,7 +41,6 @@ class GenerateAllOptions {
         FileWriter csvWriter = new FileWriter(DEST_PATH+"/"+FILE_NAME);
         for (Option opt : data) {
             csvWriter.append(opt.toStringCSV());
-          //  csvWriter.append("\n");
         }
 
         csvWriter.flush();
