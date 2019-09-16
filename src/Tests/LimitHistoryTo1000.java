@@ -1,6 +1,7 @@
 package Tests;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
@@ -11,10 +12,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("first")
 class LimitHistoryTo1000 {
 
     private ArrayList<String> data =new ArrayList<>();
-    private final String FILE_NAME ="history";
+    private final String FILE_NAME ="Chance";
     private final String DEST_PATH="/Users/hsenlalawe/Chance/Results/History";
 
     @BeforeEach

@@ -1,5 +1,6 @@
 package Tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,12 +15,13 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("first")
 class DownloadHistory {
 
     //TODO: https://code-examples.net/en/q/15a9700
 
     private final String CHROME_DRIVER="webdriver.chrome.driver";
-    private final String FILE_NAME ="history";
+    private final String FILE_NAME ="Chance";
     private final String DEST_PATH="/Users/hsenlalawe/Chance/Results/History";
 
 
@@ -38,19 +40,19 @@ class DownloadHistory {
         WebDriver driver = new ChromeDriver();
 
         driver.get(baseUrl);
-        Thread.sleep(1000);  // Let the user actually see something!
+        Thread.sleep(100);  // Let the user actually see something!
 
         // get the actual value of the title
         actualTitle = driver.getTitle();
 
-        Thread.sleep(1000);
+        Thread.sleep(100);
 
         assertEquals(expectedTitle, actualTitle);
 
         WebElement element = driver.findElement((By.xpath("//img[@src='"+imgPath+"']")));
         element.click();
 
-        Thread.sleep(3000);
+        Thread.sleep(500);
 
         driver.close();
     }
