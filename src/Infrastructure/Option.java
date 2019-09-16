@@ -13,6 +13,7 @@ public class Option {
         this.diamond = diamond;
         this.heart = heart;
         this.spade = spade;
+
     }
     //ToString methods
     public String toStringCSV() {
