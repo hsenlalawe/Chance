@@ -26,7 +26,9 @@ class Repeats {
         ArrayList<OptionHist> history=cloneHist();
         ArrayList<OptionHist> historyHist=fillHist(history);
 
-
+        for (int i=0;i<historyHist.size();i++){
+            System.out.println(i+1+") " +OptionHist.getMaxRepeatsByIndex(i));
+        }
         System.out.print("653: A,Q,A,7>> ");
 
 //        for (int j=0;j<HISTORY_SIZE;j++){}

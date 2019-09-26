@@ -13,7 +13,7 @@ public class OptionHist extends Option {
         super(clover, diamond, heart, spade);
     }
 
-    public void setValInIndex(int index,int val)
+    public void setValByIndex(int index, int val)
     {
         this.repeatsByOrder[index]=val;
     }
@@ -30,18 +30,22 @@ public class OptionHist extends Option {
         System.out.print(this.clover + "," + diamond + "," + heart + "," + spade
                 + ">> ");
 
-        for (int i = 0; i < HISTORY_SIZE/3; i++)
+        for (int i = 0; i < HISTORY_SIZE; i++)
             System.out.print(repeatsByOrder[i] + ": ");
         System.out.println("");
 
     }
-    public int repeatsAtIndex(int index){
+    public int repeatsByIndex(int index){
 
         return repeatsByOrder[index];
     }
 
     public static int[] getMaxRepeats() {
         return maxRepeats;
+    }
+
+    public static int getMaxRepeatsByIndex(int index) {
+        return maxRepeats[index];
     }
 
     public static void setMaxRepeats(int index ,int val) {

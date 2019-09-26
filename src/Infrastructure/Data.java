@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import static Constants.FilesUtils.HISTORY_TH_DEST_NAME;
 import static Constants.FilesUtils.RESULT_REST;
-import static Constants.InfoUtils.SIZE;
 
 
 public class Data {
@@ -31,14 +30,23 @@ public class Data {
 
     public static ArrayList<OptionHist> fillHist(ArrayList<OptionHist> history)throws Exception{
 
-        for(int jumps=1;jumps<=SIZE;jumps++){
+        for(int jumps=1;jumps<=history.size();jumps++){
 
             int placeInArray=jumps-1;
 
             for(int index=0;index<history.size()-jumps;index++){
-                history.get(index).setValInIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
+                history.get(index).setValByIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
             }
         }
+        for(int index=0;index<OptionHist.getMaxRepeats().length;index++){
+            int max=0;
+            for(int i=0;i<history.size();i++){
+               if(history.get(i).repeatsByIndex(index)>max)max=history.get(i).repeatsByIndex(index);
+
+            }
+            OptionHist.setMaxRepeats(index,max);
+        }
+
         return history;
     }
 
