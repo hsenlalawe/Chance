@@ -5,6 +5,8 @@ import static Constants.InfoUtils.HISTORY_SIZE;
 public class OptionHist extends Option {
 
     private int[] repeatsByOrder =new int[HISTORY_SIZE];
+    private static int[] maxRepeats =new int[HISTORY_SIZE];
+
     private int[] repeatsNoByOrder =new int[5];
 
     public OptionHist(char clover, char diamond, char heart, char spade) {
@@ -38,5 +40,11 @@ public class OptionHist extends Option {
         return repeatsByOrder[index];
     }
 
+    public static int[] getMaxRepeats() {
+        return maxRepeats;
+    }
 
+    public static void setMaxRepeats(int index ,int val) {
+            maxRepeats[index]=val;
+    }
 }

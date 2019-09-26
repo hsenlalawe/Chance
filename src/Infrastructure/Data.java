@@ -11,7 +11,6 @@ import static Constants.InfoUtils.SIZE;
 
 public class Data {
 
-   // public static final int SIZE =4096;
     public static ArrayList<Option> allOptionsCh = new ArrayList<>();
     public static ArrayList<OptionInteger> allOptionsInt = new ArrayList<>();
     public static ArrayList<Option> historyCh = new ArrayList<>();
