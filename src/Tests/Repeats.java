@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static Constants.InfoUtils.HISTORY_SIZE;
 import static Infrastructure.Data.*;
 
 @Tag("xx")
@@ -26,12 +27,15 @@ class Repeats {
         ArrayList<OptionHist> history=cloneHist();
         ArrayList<OptionHist> historyHist=fillHist(history);
 
-//        for (int j=0;j<1000;j++)
-//        System.out.print("653: A,Q,A,7>> "+j+" ");
-//        for(int i=0;i<historyHist.size();i++) {
-//           System.out.print(i+": ");
-//            historyHist.get(i).show();
-//        }
+
+        System.out.print("653: A,Q,A,7>> ");
+
+//        for (int j=0;j<HISTORY_SIZE;j++){}
+            for (int k=0;k<HISTORY_SIZE;k++){ System.out.print(k+" ");}
+        for(int i=0;i<historyHist.size();i++) {
+           System.out.print(i+": ");
+            historyHist.get(i).show();
+        }
 
 
 

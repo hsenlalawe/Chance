@@ -1,8 +1,10 @@
 package Infrastructure;
 
+import static Constants.InfoUtils.HISTORY_SIZE;
+
 public class OptionHist extends Option {
 
-    private int[] repeatsByOrder =new int[1000];
+    private int[] repeatsByOrder =new int[HISTORY_SIZE];
     private int[] repeatsNoByOrder =new int[5];
 
     public OptionHist(char clover, char diamond, char heart, char spade) {
@@ -26,7 +28,7 @@ public class OptionHist extends Option {
         System.out.print(this.clover + "," + diamond + "," + heart + "," + spade
                 + ">> ");
 
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < HISTORY_SIZE/3; i++)
             System.out.print(repeatsByOrder[i] + ": ");
         System.out.println("");
 
