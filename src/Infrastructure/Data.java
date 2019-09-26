@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+import static Constants.FilesUtils.HISTORY_TH_DEST_NAME;
 import static Constants.FilesUtils.RESULT_REST;
 
 public class Data {
@@ -36,7 +37,27 @@ public class Data {
         }
         return rest;
     }
+    public static ArrayList<OptionHist> cloneHist()throws Exception
+    {
+        ArrayList<OptionHist> history = new ArrayList<>();
+        ArrayList<String> restStr = new ArrayList<>();
 
+        String row="";
+        BufferedReader csvReader = new BufferedReader(new FileReader(HISTORY_TH_DEST_NAME));
+
+        while ((row = csvReader.readLine()) != null) {
+//            System.out.println(row);
+            restStr.add(row);
+        }
+        csvReader.close();
+
+        for(int i=0;i<restStr.size();i++){
+            String[] splitted = restStr.get(i).split(",");
+            // System.out.print(splitted[0].charAt(0)+"   "+splitted[1].charAt(0)+"   "+splitted[2].charAt(0)+"   "+splitted[3].charAt(0));
+            history.add(new OptionHist(splitted[2].charAt(0),splitted[3].charAt(0),splitted[4].charAt(0),splitted[5].charAt(0)));
+        }
+        return history;
+    }
     public static ArrayList<Option> getAllOptionsCh() {
         return allOptionsCh;
     }

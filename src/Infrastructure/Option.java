@@ -9,11 +9,15 @@ public class Option {
     private char spade;
 
     public Option(char clover, char diamond, char heart, char spade) {
-        this.clover = clover;
-        this.diamond = diamond;
-        this.heart = heart;
-        this.spade = spade;
+        this.clover = castIfNeed(clover);
+        this.diamond = castIfNeed(diamond);
+        this.heart = castIfNeed(heart);
+        this.spade = castIfNeed(spade);
 
+    }
+    public char castIfNeed(char ch){
+
+        return ch=='1'?'T':ch;
     }
     //ToString methods
     public String toStringCSV() {
