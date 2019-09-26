@@ -23,7 +23,7 @@ class Repeats {
 
       for(int i=0;i<10;i++)
       {
-          System.out.println(history.get(i).toStringCSV());
+          System.out.print(history.get(i).toStringCSV());
       }
 
     }
