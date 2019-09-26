@@ -2,7 +2,7 @@ package Infrastructure;
 
 public class OptionHist extends Option {
 
-    private int[] repeatsByOrder =new int[5];   //no reason for 5 need to think about it
+    private int[] repeatsByOrder =new int[4096];   //no reason for 5 need to think about it
     private int[] repeatsNoByOrder =new int[5];
 
     public OptionHist(char clover, char diamond, char heart, char spade) {

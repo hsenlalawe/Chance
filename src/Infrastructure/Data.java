@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import static Constants.FilesUtils.HISTORY_TH_DEST_NAME;
 import static Constants.FilesUtils.RESULT_REST;
 
-public class Data {
 
+public class Data {
+    public static final int SIZE =4096;
     public static ArrayList<Option> allOptionsCh = new ArrayList<>();
     public static ArrayList<OptionInteger> allOptionsInt = new ArrayList<>();
     public static ArrayList<Option> historyCh = new ArrayList<>();
@@ -16,6 +17,17 @@ public class Data {
 
 
     public static ArrayList<OptionHist> fillHist(ArrayList<OptionHist> history)throws Exception{
+
+
+        for(int jumps=1;jumps<=SIZE;jumps++){
+
+            int placeInArray=jumps-1;
+
+            for(int index=0;index<history.size()-jumps;index++){
+                history.get(index).setValInIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
+            }
+        }
+
 
         for(int i1=0;i1<history.size()-1;i1++){
             history.get(i1).setValInIndex(0,history.get(i1).repeat(history.get(i1+1)));
@@ -34,6 +46,15 @@ public class Data {
         }
         return history;
     }
+
+//    private static void boom(int jumps, ArrayList<OptionHist> history) {
+//        int placeInArray=jumps-1;
+//
+//        for(int index=0;index<history.size()-jumps;index++){
+//            history.get(index).setValInIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
+//        }
+//    }
+//    public static
 
     public static ArrayList<Option> cloneRest()throws Exception
     {
