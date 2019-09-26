@@ -17,11 +17,21 @@ public class Data {
 
     public static ArrayList<OptionHist> fillHist(ArrayList<OptionHist> history)throws Exception{
 
-        for(int i1=0;i1<history.size();i1++){
+        for(int i1=0;i1<history.size()-1;i1++){
             history.get(i1).setValInIndex(0,history.get(i1).repeat(history.get(i1+1)));
         }
-
-
+        for(int i1=0;i1<history.size()-2;i1++){
+            history.get(i1).setValInIndex(1,history.get(i1).repeat(history.get(i1+2)));
+        }
+        for(int i1=0;i1<history.size()-3;i1++){
+            history.get(i1).setValInIndex(2,history.get(i1).repeat(history.get(i1+3)));
+        }
+        for(int i1=0;i1<history.size()-4;i1++){
+            history.get(i1).setValInIndex(3,history.get(i1).repeat(history.get(i1+4)));
+        }
+        for(int i1=0;i1<history.size()-5;i1++){
+            history.get(i1).setValInIndex(4,history.get(i1).repeat(history.get(i1+5)));
+        }
         return history;
     }
 

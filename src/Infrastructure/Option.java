@@ -3,10 +3,10 @@ package Infrastructure;
 public class Option {
 
     //Attributes
-    private char clover;
-    private char diamond;
-    private char heart;
-    private char spade;
+    protected char clover;
+    protected char diamond;
+    protected char heart;
+    protected char spade;
 
     public Option(char clover, char diamond, char heart, char spade) {
         this.clover = castIfNeed(clover);

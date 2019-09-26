@@ -21,5 +21,16 @@ public class OptionHist extends Option {
         this.repeats = repeats;
     }
 
+    public void show(){
+        System.out.println( this.clover + "," + diamond + "," + heart + "," + spade
+                + ">> "+repeats[0]+": "+repeats[1]+": "+repeats[2]+": "
+                + repeats[3]+": "+repeats[4]+": "
+        );
+    }
+    public int repeatsAtIndex(int index){
+
+        return repeats[index];
+    }
+
 
 }
