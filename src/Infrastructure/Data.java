@@ -9,6 +9,7 @@ import static Constants.FilesUtils.RESULT_REST;
 
 
 public class Data {
+
     public static final int SIZE =4096;
     public static ArrayList<Option> allOptionsCh = new ArrayList<>();
     public static ArrayList<OptionInteger> allOptionsInt = new ArrayList<>();
@@ -18,7 +19,6 @@ public class Data {
 
     public static ArrayList<OptionHist> fillHist(ArrayList<OptionHist> history)throws Exception{
 
-
         for(int jumps=1;jumps<=SIZE;jumps++){
 
             int placeInArray=jumps-1;
@@ -27,34 +27,8 @@ public class Data {
                 history.get(index).setValInIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
             }
         }
-
-
-        for(int i1=0;i1<history.size()-1;i1++){
-            history.get(i1).setValInIndex(0,history.get(i1).repeat(history.get(i1+1)));
-        }
-        for(int i1=0;i1<history.size()-2;i1++){
-            history.get(i1).setValInIndex(1,history.get(i1).repeat(history.get(i1+2)));
-        }
-        for(int i1=0;i1<history.size()-3;i1++){
-            history.get(i1).setValInIndex(2,history.get(i1).repeat(history.get(i1+3)));
-        }
-        for(int i1=0;i1<history.size()-4;i1++){
-            history.get(i1).setValInIndex(3,history.get(i1).repeat(history.get(i1+4)));
-        }
-        for(int i1=0;i1<history.size()-5;i1++){
-            history.get(i1).setValInIndex(4,history.get(i1).repeat(history.get(i1+5)));
-        }
         return history;
     }
-
-//    private static void boom(int jumps, ArrayList<OptionHist> history) {
-//        int placeInArray=jumps-1;
-//
-//        for(int index=0;index<history.size()-jumps;index++){
-//            history.get(index).setValInIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
-//        }
-//    }
-//    public static
 
     public static ArrayList<Option> cloneRest()throws Exception
     {
@@ -93,36 +67,5 @@ public class Data {
 
 
 
-//    public static ArrayList<Option> getAllOptionsCh() {
-//        return allOptionsCh;
-//    }
-//
-//    public static void setAllOptionsCh(ArrayList<Option> allOptionsCh) {
-//        Data.allOptionsCh = allOptionsCh;
-//    }
-//
-//    public static ArrayList<OptionInteger> getAllOptionsInt() {
-//        return allOptionsInt;
-//    }
-//
-//    public static void setAllOptionsInt(ArrayList<OptionInteger> allOptionsInt) {
-//        Data.allOptionsInt = allOptionsInt;
-//    }
-//
-//    public static ArrayList<Option> getHistoryCh() {
-//        return historyCh;
-//    }
-//
-//    public static void setHistoryCh(ArrayList<Option> historyCh) {
-//        Data.historyCh = historyCh;
-//    }
-//
-//    public static ArrayList<OptionHist> getHistoryHist() {
-//        return historyHist;
-//    }
-//
-//    public static void setHistoryHist(ArrayList<OptionHist> historyHist) {
-//        Data.historyHist = historyHist;
-//    }
 
 }

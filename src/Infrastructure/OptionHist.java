@@ -2,7 +2,7 @@ package Infrastructure;
 
 public class OptionHist extends Option {
 
-    private int[] repeatsByOrder =new int[4096];   //no reason for 5 need to think about it
+    private int[] repeatsByOrder =new int[1000];
     private int[] repeatsNoByOrder =new int[5];
 
     public OptionHist(char clover, char diamond, char heart, char spade) {
@@ -22,11 +22,14 @@ public class OptionHist extends Option {
         this.repeatsByOrder = repeatsByOrder;
     }
 
-    public void show(){
-        System.out.println( this.clover + "," + diamond + "," + heart + "," + spade
-                + ">> "+ repeatsByOrder[0]+": "+ repeatsByOrder[1]+": "+ repeatsByOrder[2]+": "
-                + repeatsByOrder[3]+": "+ repeatsByOrder[4]+": "
-        );
+    public void show() {
+        System.out.print(this.clover + "," + diamond + "," + heart + "," + spade
+                + ">> ");
+
+        for (int i = 0; i < 1000; i++)
+            System.out.print(repeatsByOrder[i] + ": ");
+        System.out.println("");
+
     }
     public int repeatsAtIndex(int index){
 
