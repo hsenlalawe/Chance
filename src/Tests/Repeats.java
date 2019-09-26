@@ -21,14 +21,13 @@ class Repeats {
       ArrayList<Option> rest=cloneRest();
       ArrayList<OptionHist> history=cloneHist();
 
-      for(int i=0;i<10;i++)
-      {
-          System.out.print(history.get(i).toStringCSV());
-      }
+
 
     }
     @Test
     void RepeatsTest() throws Exception {
+
+
 
     }
 

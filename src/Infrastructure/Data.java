@@ -15,6 +15,15 @@ public class Data {
     public static ArrayList<OptionHist> historyHist = new ArrayList<>();
 
 
+    public static ArrayList<OptionHist> fillHist(ArrayList<OptionHist> history)throws Exception{
+
+        for(int i1=0;i1<history.size();i1++){
+            history.get(i1).setValInIndex(0,history.get(i1).repeat(history.get(i1+1)));
+        }
+
+
+        return history;
+    }
 
     public static ArrayList<Option> cloneRest()throws Exception
     {
