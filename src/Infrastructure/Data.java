@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import static Constants.FilesUtils.HISTORY_SRC_NAME;
+import static Constants.FilesUtils.RESULT_REST;
 
 public class Data {
 
@@ -21,16 +21,17 @@ public class Data {
         ArrayList<String> restStr = new ArrayList<>();
 
         String row="";
-        BufferedReader csvReader = new BufferedReader(new FileReader(HISTORY_SRC_NAME));
+        BufferedReader csvReader = new BufferedReader(new FileReader(RESULT_REST));
 
         while ((row = csvReader.readLine()) != null) {
+//            System.out.println(row);
             restStr.add(row);
         }
         csvReader.close();
 
         for(int i=0;i<restStr.size();i++){
             String[] splitted = restStr.get(i).split(",");
-            System.out.print(splitted[0].charAt(0)+"   "+splitted[1].charAt(0)+"   "+splitted[2].charAt(0)+"   "+splitted[3].charAt(0));
+           // System.out.print(splitted[0].charAt(0)+"   "+splitted[1].charAt(0)+"   "+splitted[2].charAt(0)+"   "+splitted[3].charAt(0));
             rest.add(new Option(splitted[0].charAt(0),splitted[1].charAt(0),splitted[2].charAt(0),splitted[3].charAt(0)));
         }
         return rest;
