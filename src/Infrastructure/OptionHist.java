@@ -2,8 +2,8 @@ package Infrastructure;
 
 public class OptionHist extends Option {
 
-    private int[] repeats =new int[5];   //no reason for 5 need to think about it
-
+    private int[] repeatsByOrder =new int[5];   //no reason for 5 need to think about it
+    private int[] repeatsNoByOrder =new int[5];
 
     public OptionHist(char clover, char diamond, char heart, char spade) {
         super(clover, diamond, heart, spade);
@@ -11,25 +11,26 @@ public class OptionHist extends Option {
 
     public void setValInIndex(int index,int val)
     {
-        this.repeats[index]=val;
-    }
-    public int[] getRepeats() {
-        return repeats;
+        this.repeatsByOrder[index]=val;
     }
 
-    public void setRepeats(int[] repeats) {
-        this.repeats = repeats;
+    public int[] getRepeatsByOrder() {
+        return repeatsByOrder;
+    }
+
+    public void setRepeatsByOrder(int[] repeatsByOrder) {
+        this.repeatsByOrder = repeatsByOrder;
     }
 
     public void show(){
         System.out.println( this.clover + "," + diamond + "," + heart + "," + spade
-                + ">> "+repeats[0]+": "+repeats[1]+": "+repeats[2]+": "
-                + repeats[3]+": "+repeats[4]+": "
+                + ">> "+ repeatsByOrder[0]+": "+ repeatsByOrder[1]+": "+ repeatsByOrder[2]+": "
+                + repeatsByOrder[3]+": "+ repeatsByOrder[4]+": "
         );
     }
     public int repeatsAtIndex(int index){
 
-        return repeats[index];
+        return repeatsByOrder[index];
     }
 
 
