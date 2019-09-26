@@ -6,20 +6,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static Constants.FilesUtils.RESULT_ALL_OPT;
 
 @Tag("first")
 class GenerateAllOptions {
 
     private ArrayList<Option> data = new ArrayList<>();
     private ArrayList<OptionInteger> dataInt = new ArrayList<>();
-    private final String DEST_PATH="/Users/hsenlalawe/Chance/Results/Revive";
-    private final String FILE_NAME ="rest";
-
 
     @BeforeEach
     void setUp() {
@@ -37,18 +33,17 @@ class GenerateAllOptions {
             data.add(oi.convertToOption());
         }
     }
+
     @Test
     void GenerateAllOptionsTest() throws Exception {
 
-        FileWriter csvWriter = new FileWriter(DEST_PATH+"/"+FILE_NAME);
+        FileWriter csvWriter = new FileWriter(RESULT_ALL_OPT);
         for (Option opt : data) {
             csvWriter.append(opt.toStringCSV());
         }
 
         csvWriter.flush();
         csvWriter.close();
-
-        File outFile = new File(DEST_PATH+"/"+FILE_NAME);
-        assertEquals(outFile.isFile(),true);
     }
+
 }
