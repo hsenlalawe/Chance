@@ -17,14 +17,7 @@ public class Data {
 
     public static ArrayList<OptionHist> boom(ArrayList<OptionHist> history)throws Exception{
 
-//        for(int index=0;index<history.size();jumps++){
-//
-//            int placeInArray=jumps-1;
-//
-//            for(int index=0;index<history.size()-jumps;index++){
-//                history.get(index).setValInIndex(placeInArray,history.get(index).repeat(history.get(index+jumps)));
-//            }
-//        }
+
         return history;
     }
 
