@@ -10,7 +10,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 
 import static Constants.FilesUtils.HISTORY_DEST_NAME;
-import static Constants.FilesUtils.HISTORY_TH_DEST_NAME;
+import static Constants.FilesUtils.HISTORY_K_DEST_NAME;
 
 @Tag("first")
 class LimitHistoryTo1000 {
@@ -34,7 +34,7 @@ class LimitHistoryTo1000 {
     @Test
     void LimitHistoryTo1000Test() throws Exception{
 
-        FileWriter csvWriter = new FileWriter(HISTORY_TH_DEST_NAME);
+        FileWriter csvWriter = new FileWriter(HISTORY_K_DEST_NAME);
         for (String rowData : data) {
             csvWriter.append(rowData);
             csvWriter.append("\n");

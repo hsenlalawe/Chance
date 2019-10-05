@@ -8,10 +8,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-import static Constants.FilesUtils.HISTORY_20K_DEST_NAME;
+import static Constants.FilesUtils.HISTORY_4K_DEST_NAME;
 import static Constants.FilesUtils.HISTORY_DEST_NAME;
+import static Constants.InfoUtils.SIZE;
 
-public class LimitHistoryTo20K {
+public class LimitHistoryTo4K {
+
+
+
     private ArrayList<String> data =new ArrayList<>();
 
     @BeforeEach
@@ -20,7 +24,7 @@ public class LimitHistoryTo20K {
         String row="";
         BufferedReader csvReader = new BufferedReader(new FileReader(HISTORY_DEST_NAME));
 
-        for(int i=0;i<20000;i++) {
+        for(int i=0;i<SIZE;i++) {
             if( (row = csvReader.readLine()) != null) {
                 data.add(row);
             }
@@ -31,7 +35,7 @@ public class LimitHistoryTo20K {
     @Test
     void LimitHistoryTo20K() throws Exception{
 
-        FileWriter csvWriter = new FileWriter(HISTORY_20K_DEST_NAME);
+        FileWriter csvWriter = new FileWriter(HISTORY_4K_DEST_NAME);
         for (String rowData : data) {
             csvWriter.append(rowData);
             csvWriter.append("\n");

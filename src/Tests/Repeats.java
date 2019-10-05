@@ -26,7 +26,7 @@ class Repeats {
     @BeforeEach
     void setUp() throws Exception{
         rest=cloneRest(RESULT_ALL_OPT);
-        history=cloneHist(HISTORY_TH_DEST_NAME);
+        history=cloneHist(HISTORY_4K_DEST_NAME);
         historyHist=fillHist(history);
         hashRest =cloneRestHashMap(rest);
     }
@@ -38,7 +38,7 @@ class Repeats {
 //        ArrayList<OptionHist> historyHist=fillHist(history);
 //        HashMap<String, Option> hashRest =cloneRestHashMap(rest);
 
-        for(int i=0;i<900;i++){
+        for(int i=0;i<3900;i++){
            int repeats= OptionHist.getMaxRepeatsByIndex(i);
 
             //{1234 -> 1234}
