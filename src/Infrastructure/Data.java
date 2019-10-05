@@ -3,9 +3,7 @@ package Infrastructure;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-
-import static Constants.FilesUtils.HISTORY_TH_DEST_NAME;
-import static Constants.FilesUtils.RESULT_REST;
+import java.util.HashMap;
 
 
 public class Data {
@@ -43,23 +41,23 @@ public class Data {
         return history;
     }
 
-    public static ArrayList<Option> cloneRest()throws Exception
+    public static ArrayList<Option> cloneRest(String path)throws Exception
     {
         ArrayList<Option> rest = new ArrayList<>();
-        ArrayList<String> restStr =cloneStringFrom(RESULT_REST);
+        ArrayList<String> restStr =cloneStringFrom(path);
         for(int i=0;i<restStr.size();i++){
             String[] splitted = restStr.get(i).split(",");
             rest.add(new Option(splitted[0].charAt(0),splitted[1].charAt(0),splitted[2].charAt(0),splitted[3].charAt(0)));
         }
         return rest;
     }
-    public static ArrayList<OptionHist> cloneHist()throws Exception
+    public static ArrayList<OptionHist> cloneHist(String path)throws Exception
     {
         ArrayList<OptionHist> history = new ArrayList<>();
-        ArrayList<String> restStr =cloneStringFrom(HISTORY_TH_DEST_NAME);
+        ArrayList<String> historyStr =cloneStringFrom(path);
 
-        for(int i=0;i<restStr.size();i++){
-            String[] splitted = restStr.get(i).split(",");
+        for(int i=0;i<historyStr.size();i++){
+            String[] splitted = historyStr.get(i).split(",");
             history.add(new OptionHist(splitted[2].charAt(0),splitted[3].charAt(0),splitted[4].charAt(0),splitted[5].charAt(0)));
         }
         return history;
@@ -77,8 +75,14 @@ public class Data {
         csvReader.close();
         return strList;
     }
+    public static HashMap<String,Option> cloneRestHashMap(ArrayList<Option> rest)throws Exception {
 
+        HashMap<String, Option> hashRest = new HashMap<String, Option>();
 
-
+        for(int i=0;i<rest.size();i++) {
+            hashRest.put(rest.get(i).getOpId(), rest.get(i));
+        }
+        return hashRest;
+    }
 
 }

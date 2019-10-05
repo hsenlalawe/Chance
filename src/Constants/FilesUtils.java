@@ -14,10 +14,12 @@ public final class FilesUtils {
     /** Files  */
     public static final String HISTORY_DEST_NAME= PRJ_DIR +"/Results/History/Chance";
     public static final String HISTORY_TH_DEST_NAME= PRJ_DIR +"/Results/History/ChanceTh";
+    public static final String HISTORY_20TH_DEST_NAME= PRJ_DIR +"/Results/History/Chance20Th";
+
     public static final String HISTORY_SRC_NAME= HOME_DIR +"/Downloads/Chance.csv";
     public static final String RESULT_ALL_OPT= PRJ_DIR +"/Results/Revive/allOptions";
     public static final String RESULT_REST= PRJ_DIR +"/Results/Revive/rest";
-
+    public static final String RESULT_REST2= PRJ_DIR +"/Results/Revive/rest2";
 
 
 }
